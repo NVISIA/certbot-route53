@@ -41,7 +41,7 @@ Example policy:
                 "route53:ListResourceRecordSets"
             ],
             "Resource": [
-                "arn:aws:route53:::hostedzone/[YOUR ZONEFILE HERE]"
+                "arn:aws:route53:::hostedzone/[YOUR ZONEFILE ID HERE]"
             ]
         },
         {
