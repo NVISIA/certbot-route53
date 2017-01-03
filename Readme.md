@@ -1,7 +1,7 @@
 # certbot-route53
 This docker image is used to automatically request or renew Let's Encrypt signed SSL keys for your domain(s) that use Amazon's Route53 DNS service.
 
-[Docker Hub link][https://hub.docker.com/r/ntcnvisia/certbot-route53/]
+[Docker Hub link](https://hub.docker.com/r/ntcnvisia/certbot-route53/)
 
 ### Example
 ```
