@@ -10,7 +10,7 @@ docker run -e "DOMAIN=[YOUR DOMAIN]" -e "EMAIL=[YOUR EMAIL]" -e "AWS_ACCESS_KEY_
 
 ### Required Volumes
 You should create a named volume (`volume create --name [YOUR VOLUME NAME]`).
-This volume will be mapped to /etc/letsencrypt - the folder certbot uses to store certificates and other configuration data required for renewal.
+This volume must be mapped to /etc/letsencrypt - this is the folder certbot uses to store certificates and other configuration data required for renewal.
 
 ### Runtime Configuration
 This image is configured using the following environment variables:
@@ -81,6 +81,6 @@ File to Override | Purpose
 /root/certbot-route53/hook-each.sh | Called once for each domain that is successfully renewed. Receives two additional environment variables: `$RENEWED_LINEAGE` which points to the live subdirectory in the provided volume for the domain in question, and `$RENEWED_DOMAINS` which has a space-delimited list of domains that were renewed
 /root/certbot-route53/hook-post.sh | Called after all domains are renewed, useful for starting things up again or renaming and copying the full set of files to a different volume
 
-An example of this will be provided soon™
+An example of this is [certbot-route53-ucp](https://hub.docker.com/r/ntcnvisia/certbot-route53-ucp/)
 
 [re-run-certbot]:https://certbot.eff.org/docs/using.html#re-running-certbot
