@@ -1,4 +1,4 @@
-FROM alpine:3.5
+FROM alpine:3.6
 MAINTAINER dlee@nvisia.com
 
 RUN apk add --update --no-cache --virtual=run-deps \
@@ -9,7 +9,7 @@ RUN apk add --update --no-cache --virtual=run-deps \
     tzdata \
     py2-pip
 
-RUN pip install certbot-route53
+RUN pip install certbot-dns-route53
 
 WORKDIR /
 
