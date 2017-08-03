@@ -34,36 +34,25 @@ Example policy:
 ```
 {
     "Version": "2012-10-17",
+    "Id": "certbot-dns-route53 sample policy",
     "Statement": [
         {
             "Effect": "Allow",
             "Action": [
-                "route53:ChangeResourceRecordSets",
-                "route53:GetChange",
-                "route53:ListResourceRecordSets"
-            ],
-            "Resource": [
-                "arn:aws:route53:::hostedzone/[YOUR ZONEFILE ID HERE]"
-            ]
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
+                "route53:ListHostedZones",
                 "route53:GetChange"
             ],
             "Resource": [
-                "arn:aws:route53:::change/*"
+                "*"
             ]
         },
         {
-            "Effect": "Allow",
-            "Action": [
-                "route53:ListHealthChecks",
-                "route53:ListHostedZones",
-                "route53:ListHostedZonesByName"
+            "Effect" : "Allow",
+            "Action" : [
+                "route53:ChangeResourceRecordSets"
             ],
-            "Resource": [
-                "*"
+            "Resource" : [
+                "arn:aws:route53:::hostedzone/YOURHOSTEDZONEID"
             ]
         }
     ]
