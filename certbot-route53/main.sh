@@ -31,4 +31,5 @@ $CERTBOT certonly -a "certbot-route53:auth" --non-interactive --text --agree-tos
     --email $EMAIL \
     --pre-hook "/root/certbot-route53/hook-pre.sh" \
     --renew-hook "/root/certbot-route53/hook-each.sh" \
-    --post-hook "/root/certbot-route53/hook-post.sh"
+    --post-hook "/root/certbot-route53/hook-post.sh" \
+    --server "https://acme-v02.api.letsencrypt.org/directory"
