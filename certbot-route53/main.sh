@@ -19,6 +19,11 @@ then
     FORCERENEWAL="--force-renewal"
 fi
 
+if [ ! -z "$WILDCARD" ];
+then
+    ANDWILDCARD="-d *.${DOMAIN}"
+fi
+
 if [ ! -z "$EXPAND" ];
 then
     EXPAND="--expand"
@@ -28,6 +33,7 @@ $CERTBOT certonly -a "certbot-route53:auth" --non-interactive --text --agree-tos
     $FORCERENEWAL \
     $EXPAND \
     -d $DOMAIN \
+    $ANDWILDCARD \
     --email $EMAIL \
     --pre-hook "/root/certbot-route53/hook-pre.sh" \
     --renew-hook "/root/certbot-route53/hook-each.sh" \
